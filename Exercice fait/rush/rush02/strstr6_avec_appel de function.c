@@ -26,13 +26,15 @@ char    *ft_strstr (char *src, char *to_find)
     a = 0;
     b = 0;
     p = 0;
+    if (to_find[0] == '\0')
+        return (str);
     while(src[a] && to_find[b])
     {
       /*
       ** scr[a] = *(src + a) -> scr[a] est d'avantage apprecié car sinon
       ** il risque de ne pas compiler.
       */
-              if((src[a] != '\0') && (src[a] == to_find[b]))
+        if((src[a] != '\0') && (src[a] == to_find[b]))
         {
             p = a;
             while(src[p + b] == to_find[b])
@@ -44,6 +46,7 @@ char    *ft_strstr (char *src, char *to_find)
         }
         a++;
     }
+    return 0;
 }
 
 int main() {
